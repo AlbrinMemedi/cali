@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="Generatore di piani di allenamento calistenico personalizzati basati sulle tue capacità e obiettivi">
+    <meta name="theme-color" content="#3498db">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Generatore di Piani di Allenamento Calistenico</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1><i class="fas fa-dumbbell"></i> Generatore di Piani di Allenamento Calistenico</h1>
+            <p>Crea il tuo piano di allenamento calistenico personalizzato di 4 settimane basato sulle tue capacità attuali e obiettivi</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="form-section">
+            <h2>Le Tue Capacità Attuali</h2>
+            <form id="abilities-form">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="pull-ups">Trazioni Massime</label>
+                        <input type="number" id="pull-ups" name="pull-ups" min="0" max="50" placeholder="0">
+                    </div>
+                    <div class="form-group">
+                        <label for="push-ups">Piegamenti Massimi</label>
+                        <input type="number" id="push-ups" name="push-ups" min="0" max="100" placeholder="0">
+                    </div>
+                    <div class="form-group">
+                        <label for="dips">Dip Massimi</label>
+                        <input type="number" id="dips" name="dips" min="0" max="50" placeholder="0">
+                    </div>
+                    <div class="form-group">
+                        <label for="australian-pull-ups">Trazioni Australiane Massime</label>
+                        <input type="number" id="australian-pull-ups" name="australian-pull-ups" min="0" max="50" placeholder="0">
+                    </div>
+                    <div class="form-group">
+                        <label for="squats">Squat a Corpo Libero Massimi</label>
+                        <input type="number" id="squats" name="squats" min="0" max="100" placeholder="0">
+                    </div>
+                    <div class="form-group">
+                        <label for="l-sit">Tenuta L-Sit Massima (secondi)</label>
+                        <input type="number" id="l-sit" name="l-sit" min="0" max="120" placeholder="0">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="goal">Il Tuo Obiettivo Principale</label>
+                    <select id="goal" name="goal">
+                        <option value="strength">Costruire Forza</option>
+                        <option value="muscle">Costruire Muscoli</option>
+                        <option value="endurance">Migliorare Resistenza</option>
+                        <option value="skill">Imparare Abilità (Muscle-up, Verticale, ecc.)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="days">Giorni di Allenamento a Settimana</label>
+                    <select id="days" name="days">
+                        <option value="3">3 giorni</option>
+                        <option value="4">4 giorni</option>
+                        <option value="5">5 giorni</option>
+                        <option value="6">6 giorni</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="experience">Livello di Esperienza</label>
+                    <select id="experience" name="experience">
+                        <option value="beginner">Principiante (0-6 mesi)</option>
+                        <option value="intermediate">Intermedio (6 mesi - 2 anni)</option>
+                        <option value="advanced">Avanzato (2+ anni)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="equipment">Attrezzatura Disponibile (seleziona tutto ciò che è applicabile)</label>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" name="equipment" value="pull-up-bar" checked> Sbarra per Trazioni</label>
+                        <label><input type="checkbox" name="equipment" value="dip-bars"> Sbarre Parallele</label>
+                        <label><input type="checkbox" name="equipment" value="rings"> Anelli Ginnici</label>
+                        <label><input type="checkbox" name="equipment" value="resistance-bands"> Elastici</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="target-skills">Abilità Obiettivo (seleziona tutto ciò che è applicabile)</label>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" name="target-skills" value="muscle-up"> Muscle-up</label>
+                        <label><input type="checkbox" name="target-skills" value="handstand"> Verticale</label>
+                        <label><input type="checkbox" name="target-skills" value="front-lever"> Front Lever</label>
+                        <label><input type="checkbox" name="target-skills" value="planche"> Planche</label>
+                        <label><input type="checkbox" name="target-skills" value="human-flag"> Bandiera Umana</label>
+                        <label><input type="checkbox" name="target-skills" value="pistol-squat"> Pistol Squat</label>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-primary">Genera Piano di Allenamento</button>
+            </form>
+        </section>
+
+        <section id="plan-section" class="hidden">
+            <div class="plan-header">
+                <h2>Il Tuo Piano di Allenamento Calistenico di 4 Settimane</h2>
+                <button id="download-pdf" class="btn-secondary"><i class="fas fa-download"></i> Scarica PDF</button>
+            </div>
+            <div id="training-plan">
+                <!-- Il piano di allenamento sarà generato qui -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Generatore di Piani di Allenamento Calistenico | Creato con <i class="fas fa-heart"></i> per gli appassionati di calistenia</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
