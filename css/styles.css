@@ -1,0 +1,1458 @@
+/* Global Styles */
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2ecc71;
+    --dark-color: #2c3e50;
+    --light-color: #ecf0f1;
+    --danger-color: #e74c3c;
+    --pausa-color: #f39c12;
+    --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+header {
+    background: linear-gradient(135deg, var(--primary-color), var(--dark-color));
+    color: white;
+    padding: 2rem 0;
+    text-align: center;
+    margin-bottom: 2rem;
+    box-shadow: var(--box-shadow);
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+header p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+/* Form Styles */
+.form-section {
+    background-color: white;
+    border-radius: 10px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: var(--box-shadow);
+}
+
+.form-section h2 {
+    color: var(--dark-color);
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-size: 1.8rem;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--dark-color);
+}
+
+.form-group input[type="number"],
+.form-group select {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+.form-group input[type="number"]:focus,
+.form-group select:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
+.checkbox-group {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 0.5rem;
+}
+
+.checkbox-group label {
+    display: flex;
+    align-items: center;
+    font-weight: normal;
+    cursor: pointer;
+}
+
+.checkbox-group input[type="checkbox"] {
+    margin-right: 0.5rem;
+    cursor: pointer;
+}
+
+.btn-primary {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-primary:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    padding: 0.8rem 1.5rem;
+    background-color: var(--secondary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.btn-secondary:hover {
+    background-color: #27ae60;
+    transform: translateY(-2px);
+}
+
+/* Plan Section */
+#plan-section {
+    background-color: white;
+    border-radius: 10px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: var(--box-shadow);
+}
+
+.plan-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #eee;
+}
+
+.plan-header h2 {
+    color: var(--dark-color);
+    font-size: 1.8rem;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Training Plan Styles */
+.week-container {
+    margin-bottom: 2rem;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.week-header {
+    background-color: var(--dark-color);
+    color: white;
+    padding: 1rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.day-container {
+    padding: 1.5rem;
+    border-bottom: 1px solid #eee;
+}
+
+.day-container:last-child {
+    border-bottom: none;
+}
+
+.day-header {
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.exercise {
+    margin-bottom: 1.2rem;
+    padding: 1rem;
+    border-left: 3px solid var(--primary-color);
+    background-color: #f9f9f9;
+    border-radius: 0 5px 5px 0;
+    transition: var(--transition);
+}
+
+.exercise:hover {
+    box-shadow: var(--box-shadow);
+    transform: translateX(2px);
+}
+
+.exercise-name {
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+}
+
+.exercise-sets {
+    color: #666;
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 0.4rem;
+}
+
+.pausa-between-sets, 
+.pausa-between-exercises {
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 0.3rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.pausa-between-sets i, 
+.pausa-between-exercises i {
+    color: var(--pausa-color);
+}
+
+.pausa-between-exercises {
+    margin-top: 0.6rem;
+    padding-top: 0.6rem;
+    border-top: 1px dashed #ddd;
+}
+
+.skill-work {
+    background-color: rgba(46, 204, 113, 0.1);
+    border-left-color: var(--secondary-color);
+}
+
+.rest-day {
+    color: #666;
+    font-style: italic;
+    padding: 1rem;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+}
+
+.notes {
+    margin-top: 1rem;
+    padding: 1rem;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+    border-left: 3px solid var(--secondary-color);
+}
+
+.notes h4 {
+    margin-bottom: 0.5rem;
+    color: var(--dark-color);
+}
+
+.exercise-description {
+    font-size: 0.85rem;
+    color: #777;
+    margin: 6px 0 12px 8px;
+    padding-left: 8px;
+    border-left: 2px solid #f1c40f;
+    line-height: 1.4;
+}
+
+.exercise-description em {
+    font-style: italic;
+    color: #555;
+}
+
+/* Diet plan styles */
+.diet-plan {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.diet-plan h3 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 8px;
+}
+
+.diet-description {
+    font-size: 0.9rem;
+    color: #555;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.macros-section, .meal-plan-section, .foods-by-macro-section, .tips-section {
+    margin-bottom: 25px;
+}
+
+.macros-section h4, .meal-plan-section h4, .foods-by-macro-section h4, .tips-section h4 {
+    color: #3498db;
+    margin-bottom: 12px;
+    font-size: 1.1rem;
+}
+
+.macros-list, .tips-list, .custom-tips-list {
+    list-style-type: none;
+    padding-left: 5px;
+}
+
+.macros-list li, .tips-list li, .custom-tips-list li {
+    padding: 5px 0;
+    border-bottom: 1px dotted #ddd;
+    line-height: 1.4;
+}
+
+.meal {
+    background-color: white;
+    border-radius: 6px;
+    padding: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.meal h5 {
+    color: #27ae60;
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+.meal-options {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin-bottom: 10px;
+}
+
+.meal-options li {
+    margin-bottom: 6px;
+    font-size: 0.9rem;
+}
+
+.meal-notes {
+    font-size: 0.85rem;
+    color: #777;
+    font-style: italic;
+    border-left: 2px solid #f1c40f;
+    padding-left: 10px;
+    margin-top: 8px;
+}
+
+.macro-foods {
+    background-color: white;
+    border-radius: 6px;
+    padding: 12px 15px;
+    margin-bottom: 12px;
+}
+
+.macro-foods h5 {
+    color: #e74c3c;
+    margin-bottom: 8px;
+    font-size: 1rem;
+}
+
+.foods-list {
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.foods-list li {
+    background-color: #f1f1f1;
+    padding: 4px 10px;
+    border-radius: 20px;
+    margin-right: 8px;
+    margin-bottom: 8px;
+    font-size: 0.8rem;
+}
+
+/* Footer */
+footer {
+    background-color: var(--dark-color);
+    color: white;
+    text-align: center;
+    padding: 1.5rem 0;
+    margin-top: 2rem;
+}
+
+footer p {
+    opacity: 0.8;
+}
+
+footer .fa-heart {
+    color: var(--danger-color);
+}
+
+/* Responsive Styles */
+@media (max-width: 991px) {
+    .container {
+        width: 95%;
+    }
+    
+    .form-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    header h1 {
+        font-size: 2.2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 15px;
+    }
+    
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .plan-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .plan-header h2 {
+        margin-bottom: 15px;
+    }
+    
+    .btn-primary, .btn-secondary {
+        width: 100%;
+        margin-bottom: 10px;
+        padding: 12px 15px;
+        font-size: 1rem;
+    }
+    
+    .week-container {
+        padding: 15px;
+    }
+    
+    .day-container {
+        padding: 12px;
+        margin-bottom: 15px;
+    }
+    
+    .exercise-item {
+        padding: 10px;
+    }
+    
+    header h1 {
+        font-size: 1.8rem;
+    }
+    
+    header p {
+        font-size: 1rem;
+    }
+    
+    .week-container {
+        margin-bottom: 1.5rem;
+    }
+    
+    .day-container {
+        padding: 1rem;
+    }
+    
+    .exercise {
+        padding: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: 100%;
+        padding: 0 15px;
+    }
+    
+    header {
+        padding: 1.5rem 0;
+    }
+    
+    header h1 {
+        font-size: 1.6rem;
+    }
+    
+    header p {
+        font-size: 0.9rem;
+    }
+    
+    .form-section, #plan-section {
+        padding: 1.5rem;
+    }
+    
+    .form-group label {
+        font-size: 0.9rem;
+    }
+    
+    .btn-primary, .btn-secondary {
+        padding: 0.8rem;
+        font-size: 1rem;
+    }
+    
+    .exercise-name {
+        font-size: 0.95rem;
+    }
+    
+    .exercise-sets, .pausa-between-sets, .pausa-between-exercises {
+        font-size: 0.85rem;
+    }
+    
+    .notes h4 {
+        font-size: 1rem;
+    }
+    
+    .notes ul {
+        padding-left: 1rem;
+    }
+    
+    .notes li {
+        font-size: 0.9rem;
+        margin-bottom: 0.8rem;
+    }
+    
+    .exercise-description {
+        font-size: 0.8rem;
+        margin: 4px 0 10px 4px;
+        padding-left: 6px;
+    }
+    
+    .diet-plan {
+        padding: 15px;
+        margin: 15px 0;
+    }
+    
+    .meal {
+        padding: 12px;
+    }
+    
+    .meal-options li {
+        font-size: 0.85rem;
+    }
+    
+    .foods-list li {
+        font-size: 0.75rem;
+        margin-right: 6px;
+        margin-bottom: 6px;
+    }
+}
+
+/* Print Styles for PDF */
+@media print {
+    body {
+        background-color: white;
+    }
+    
+    header, footer, .form-section, #download-pdf {
+        display: none;
+    }
+    
+    #plan-section {
+        box-shadow: none;
+        padding: 0;
+    }
+    
+    .container {
+        width: 100%;
+        max-width: none;
+        padding: 0;
+    }
+}
+
+/* User stats styles */
+.user-stats {
+    background-color: #f5f7fa;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 0 0 25px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    border-left: 4px solid #3498db;
+}
+
+.user-stats h3 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+.stats-list {
+    list-style-type: none;
+    padding-left: 5px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
+}
+
+.stats-list li {
+    padding: 8px 10px;
+    background-color: white;
+    border-radius: 6px;
+    font-size: 0.9rem;
+}
+
+/* Summary and User Info Styles */
+.summary-section, .user-info-section {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.summary-section {
+    border-left: 4px solid #27ae60;
+}
+
+.user-info-section {
+    border-left: 4px solid #e74c3c;
+}
+
+.summary-section h3, .user-info-section h3 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+.section-title {
+    color: #2c3e50;
+    margin: 30px 0 10px 0;
+    font-size: 1.5rem;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 8px;
+}
+
+/* Media queries for mobile */
+@media (max-width: 480px) {
+    .user-stats, .summary-section, .user-info-section {
+        padding: 15px;
+        margin: 15px 0;
+    }
+    
+    .stats-list {
+        grid-template-columns: 1fr;
+    }
+    
+    .stats-list li {
+        font-size: 0.85rem;
+    }
+    
+    .section-title {
+        font-size: 1.3rem;
+        margin: 20px 0 10px 0;
+    }
+}
+
+/* Loading indicator for PDF download */
+#pdf-loading-message {
+    z-index: 9999;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+#pdf-loading-message i {
+    margin-right: 10px;
+    font-size: 1.2rem;
+}
+
+/* Accessibility improvements */
+.btn-primary:focus, 
+.btn-secondary:focus, 
+input:focus, 
+select:focus {
+    outline: 2px solid #3498db;
+    outline-offset: 2px;
+}
+
+/* Improved input and form styles */
+input, select {
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input:hover, select:hover {
+    border-color: #3498db;
+}
+
+.checkbox-group label {
+    cursor: pointer;
+    padding: 5px 0;
+    display: flex;
+    align-items: center;
+}
+
+.checkbox-group input[type="checkbox"] {
+    margin-right: 8px;
+    cursor: pointer;
+    width: 16px;
+    height: 16px;
+}
+
+/* Stili per la navigazione principale */
+.main-nav {
+    background-color: #2c3e50;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+.main-nav .container {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+}
+
+.main-nav ul {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    max-width: 500px;
+}
+
+.main-nav li {
+    flex: 1;
+    text-align: center;
+}
+
+.main-nav a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 15px 20px;
+    transition: all 0.3s ease;
+    border-bottom: 3px solid transparent;
+    font-weight: 600;
+}
+
+.main-nav li.active a {
+    border-bottom: 3px solid #3498db;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.main-nav a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.main-nav i {
+    margin-right: 8px;
+}
+
+/* Stili per la pagina della dieta */
+.diet-page header {
+    background-color: #27ae60;
+}
+
+.diet-page .btn-primary {
+    background-color: #27ae60;
+}
+
+.diet-page .btn-primary:hover {
+    background-color: #219955;
+}
+
+.diet-page .main-nav li.active a {
+    border-bottom: 3px solid #27ae60;
+}
+
+/* Stili per il form della dieta */
+.diet-form-section {
+    max-width: 900px;
+    margin: 0 auto 40px;
+}
+
+.diet-form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.form-section-title {
+    grid-column: 1 / -1;
+    margin-top: 25px;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 5px;
+}
+
+.form-section-title:first-child {
+    margin-top: 0;
+}
+
+.form-section-title h3 {
+    color: #2c3e50;
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+.form-section-title i {
+    margin-right: 8px;
+    color: #27ae60;
+}
+
+.full-width {
+    grid-column: 1 / -1;
+}
+
+/* Stili per i risultati della dieta */
+#diet-plan-container {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .diet-form-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .main-nav a {
+        padding: 12px 10px;
+        font-size: 0.9rem;
+    }
+    
+    .main-nav i {
+        font-size: 1.1rem;
+        margin-right: 5px;
+    }
+}
+
+/* Stili per la pagina di dieta */
+.diet-form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.form-section-title {
+    grid-column: 1 / -1;
+    margin-top: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #ddd;
+}
+
+.form-section-title:first-child {
+    margin-top: 0;
+}
+
+.form-section-title h3 {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    margin-bottom: 0;
+}
+
+.form-section-title i {
+    margin-right: 8px;
+}
+
+.full-width {
+    grid-column: 1 / -1;
+}
+
+/* Stili per il piano alimentare */
+#diet-plan-container {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: var(--box-shadow);
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+/* Stili per le sezioni del piano alimentare */
+.diet-summary-section, .macros-section, .meal-plan-section, .tips-section {
+    margin-bottom: 2.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #eee;
+}
+
+.diet-summary-section:last-child, .macros-section:last-child, .meal-plan-section:last-child, .tips-section:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.section-title {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    margin-bottom: 1.2rem;
+    color: var(--dark-color);
+}
+
+.section-title i {
+    margin-right: 10px;
+    color: var(--primary-color);
+}
+
+.summary-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.summary-item {
+    background-color: #f8f9fa;
+    padding: 10px 15px;
+    border-radius: 6px;
+}
+
+.summary-item .label {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.summary-item .value {
+    font-weight: 600;
+    color: var(--dark-color);
+}
+
+/* Stili per la sezione dei macronutrienti */
+.calories-info {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px dashed #ddd;
+}
+
+.calories-info h4 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: var(--dark-color);
+}
+
+.calories-value {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.calories-details {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.macros-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.macro-item {
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.macro-item.protein {
+    background-color: #e3f2fd;
+    border-left: 4px solid #2196f3;
+}
+
+.macro-item.carbs {
+    background-color: #f1f8e9;
+    border-left: 4px solid #8bc34a;
+}
+
+.macro-item.fat {
+    background-color: #fff8e1;
+    border-left: 4px solid #ffc107;
+}
+
+.macro-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.macro-value {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.macro-calories {
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+    color: #666;
+}
+
+.macro-percentage {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+/* Stili per la sezione del piano pasti */
+.meal-plan-description {
+    margin-bottom: 1.5rem;
+    color: #666;
+    font-size: 0.95rem;
+}
+
+.meals-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.meal-item {
+    background-color: white;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    border-left: 4px solid var(--primary-color);
+}
+
+.meal-header {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+.meal-header h4 {
+    margin: 0;
+    color: var(--dark-color);
+}
+
+.meal-macros {
+    line-height: 1.8;
+}
+
+.meal-calories {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 8px;
+}
+
+.meal-macro {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* Stili per la sezione consigli */
+.tips-list {
+    margin: 0 0 1.5rem 1.5rem;
+}
+
+.tips-list li {
+    margin-bottom: 10px;
+    line-height: 1.5;
+    color: #444;
+}
+
+.important-note {
+    background-color: #f8f9fa;
+    border-left: 4px solid #f0ad4e;
+    padding: 15px;
+    border-radius: 6px;
+    margin-top: 1.5rem;
+}
+
+.important-note p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+/* Stili per il messaggio di caricamento PDF */
+#pdf-loading-message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(52, 152, 219, 0.9);
+    color: white;
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    z-index: 1000;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 300px;
+    text-align: center;
+}
+
+#pdf-loading-message i {
+    margin-right: 10px;
+    font-size: 1.2rem;
+}
+
+/* Media queries per la responsività */
+@media (max-width: 768px) {
+    .diet-form-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .macros-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .summary-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .meals-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .calories-value {
+        font-size: 2rem;
+    }
+    
+    .macro-value {
+        font-size: 1.5rem;
+    }
+    
+    .section-title {
+        font-size: 1.3rem;
+    }
+    
+    #diet-plan-container {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .meal-item {
+        padding: 12px;
+    }
+    
+    .meal-header h4 {
+        font-size: 1.1rem;
+    }
+    
+    .meal-calories {
+        font-size: 1rem;
+    }
+    
+    .meal-macro {
+        font-size: 0.85rem;
+    }
+    
+    .calories-value {
+        font-size: 1.8rem;
+    }
+    
+    .calories-details {
+        font-size: 0.8rem;
+    }
+    
+    .summary-item {
+        padding: 8px 12px;
+    }
+    
+    .section-title {
+        font-size: 1.2rem;
+    }
+    
+    .important-note p {
+        font-size: 0.85rem;
+    }
+    
+    #pdf-loading-message {
+        min-width: 250px;
+        font-size: 1rem;
+        padding: 12px 25px;
+    }
+}
+
+/* Stili specifici per il piano alimentare */
+#diet-plan-section {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+#diet-plan-section.hidden {
+    display: none;
+}
+
+.plan-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.summary-section {
+    margin-bottom: 30px;
+}
+
+.summary-card {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.summary-item {
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.macros-card {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+.macro-item {
+    flex: 1;
+    min-width: 200px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 15px;
+    margin: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.macro-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: white;
+    margin-right: 15px;
+}
+
+.protein-icon {
+    background-color: #e74c3c;
+}
+
+.carbs-icon {
+    background-color: #3498db;
+}
+
+.fat-icon {
+    background-color: #f1c40f;
+}
+
+.macro-details {
+    flex: 1;
+}
+
+.macro-details span {
+    display: block;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.macro-details strong {
+    display: block;
+    font-size: 1.2rem;
+    margin: 5px 0;
+}
+
+.macro-details small {
+    display: block;
+    font-size: 0.8rem;
+    color: #888;
+}
+
+.meal-plan-section {
+    margin-top: 30px;
+}
+
+.week-tabs {
+    display: flex;
+    overflow-x: auto;
+    border-bottom: 1px solid #dee2e6;
+    margin-bottom: 20px;
+}
+
+.tab-button {
+    background: none;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 16px;
+    color: #666;
+    transition: all 0.3s;
+    border-bottom: 3px solid transparent;
+}
+
+.tab-button:hover {
+    color: #3498db;
+}
+
+.tab-button.active {
+    color: #2980b9;
+    border-bottom: 3px solid #2980b9;
+    font-weight: bold;
+}
+
+.day-plan {
+    display: none;
+}
+
+.meal-card {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.meal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.meal-header h4 {
+    margin: 0;
+    color: #444;
+}
+
+.meal-macros {
+    display: flex;
+    gap: 10px;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.food-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.food-list li {
+    padding: 8px 0;
+    border-bottom: 1px dashed #eee;
+    display: flex;
+    justify-content: space-between;
+}
+
+.food-list li:last-child {
+    border-bottom: none;
+}
+
+.food-name {
+    font-weight: 500;
+}
+
+.food-amount {
+    color: #666;
+}
+
+.tips-section {
+    margin-top: 30px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 15px;
+}
+
+.tips-list {
+    padding-left: 20px;
+}
+
+.tips-list li {
+    margin-bottom: 8px;
+}
+
+.error-message {
+    background-color: #ffe6e6;
+    border-left: 5px solid #e74c3c;
+    padding: 15px;
+    margin: 20px 0;
+    color: #c0392b;
+}
+
+/* Responsività */
+@media (max-width: 768px) {
+    .macros-card {
+        flex-direction: column;
+    }
+    
+    .macro-item {
+        margin: 5px 0;
+    }
+    
+    .meal-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .meal-macros {
+        margin-top: 10px;
+    }
+    
+    .week-tabs {
+        flex-wrap: wrap;
+    }
+    
+    .tab-button {
+        flex: 1;
+        min-width: 80px;
+    }
+}
