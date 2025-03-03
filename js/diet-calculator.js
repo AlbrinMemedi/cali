@@ -63,23 +63,60 @@ document.addEventListener('DOMContentLoaded', function() {
         const weight = parseFloat(weightInput.value);
         const height = parseFloat(heightInput.value);
         const age = parseInt(ageInput.value);
+        const goal = goalSelect.value;
+        const targetWeightInput = document.getElementById('target-weight');
+        const targetWeight = targetWeightInput && targetWeightInput.value ? parseFloat(targetWeightInput.value) : null;
         
+        // Validazione del peso
         if (isNaN(weight) || weight <= 0) {
             alert('Inserisci un peso valido');
             weightInput.focus();
             return false;
         }
         
+        // Validazione dell'altezza
         if (isNaN(height) || height <= 0) {
             alert('Inserisci un\'altezza valida');
             heightInput.focus();
             return false;
         }
         
+        // Validazione dell'età
         if (isNaN(age) || age <= 0 || age > 120) {
             alert('Inserisci un\'età valida (1-120)');
             ageInput.focus();
             return false;
+        }
+        
+        // Validazione del peso target in relazione all'obiettivo
+        if (targetWeight !== null) {
+            // Se l'obiettivo è perdere peso ma il peso target è maggiore del peso attuale
+            if (goal === 'fat-loss' && targetWeight >= weight) {
+                alert('Il peso target deve essere inferiore al peso attuale quando l\'obiettivo è la perdita di peso');
+                targetWeightInput.focus();
+                return false;
+            }
+            
+            // Se l'obiettivo è aumentare di peso ma il peso target è minore del peso attuale
+            if (goal === 'muscle-gain' && targetWeight <= weight) {
+                alert('Il peso target deve essere superiore al peso attuale quando l\'obiettivo è l\'aumento di massa muscolare');
+                targetWeightInput.focus();
+                return false;
+            }
+            
+            // Se l'obiettivo è mantenere il peso ma il peso target è significativamente diverso dal peso attuale
+            if (goal === 'maintenance' && Math.abs(targetWeight - weight) > 2) {
+                alert('Il peso target dovrebbe essere simile al peso attuale quando l\'obiettivo è il mantenimento del peso');
+                targetWeightInput.focus();
+                return false;
+            }
+            
+            // Controllo che il peso target sia in un range ragionevole
+            if (targetWeight < weight * 0.5 || targetWeight > weight * 1.5) {
+                alert('Il peso target sembra irrealistico. Inserisci un valore più ragionevole.');
+                targetWeightInput.focus();
+                return false;
+            }
         }
         
         return true;

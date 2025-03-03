@@ -72,11 +72,12 @@ function distributeMacros(macros, mealsPerDay) {
     const { calories, protein, carbs, fat } = macros;
     
     // Distribuzioni percentuali in base al numero di pasti
+    // Bilanciamo meglio le calorie tra colazione, pranzo e cena
     const distributions = {
-        3: [0.3, 0.4, 0.3],                       // Colazione, Pranzo, Cena
-        4: [0.25, 0.1, 0.4, 0.25],                // Colazione, Spuntino, Pranzo, Cena
-        5: [0.2, 0.1, 0.35, 0.1, 0.25],           // Colazione, Spuntino 1, Pranzo, Spuntino 2, Cena
-        6: [0.2, 0.05, 0.35, 0.1, 0.25, 0.05]     // Colazione, Spuntino 1, Pranzo, Spuntino 2, Cena, Spuntino 3
+        3: [0.33, 0.34, 0.33],                    // Colazione, Pranzo, Cena - distribuzione equilibrata
+        4: [0.25, 0.15, 0.35, 0.25],              // Colazione, Spuntino, Pranzo, Cena - più bilanciato
+        5: [0.25, 0.1, 0.3, 0.1, 0.25],           // Colazione, Spuntino 1, Pranzo, Spuntino 2, Cena - più bilanciato
+        6: [0.25, 0.05, 0.3, 0.1, 0.25, 0.05]     // Colazione, Spuntino 1, Pranzo, Spuntino 2, Cena, Spuntino 3 - più bilanciato
     };
     
     const distribution = distributions[mealsPerDay] || distributions[3];

@@ -20,8 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
             days: parseInt(document.getElementById('days').value),
             experience: document.getElementById('experience').value,
             equipment: Array.from(document.querySelectorAll('input[name="equipment"]:checked')).map(el => el.value),
-            targetSkills: Array.from(document.querySelectorAll('input[name="target-skills"]:checked')).map(el => el.value),
-            dietPlan: document.getElementById('diet-plan').value
+            targetSkills: Array.from(document.querySelectorAll('input[name="target-skills"]:checked')).map(el => el.value)
         };
         
         // Generate training plan
@@ -1069,25 +1068,6 @@ document.addEventListener('DOMContentLoaded', function() {
             trainingPlanContainer.appendChild(weekContainer);
         });
 
-        // Generate and display diet plan if selected
-        if (userData.dietPlan && userData.dietPlan !== 'none') {
-            // Import diet.js functions
-            const dietPlan = generateDietPlan(userData.dietPlan, userData);
-            if (dietPlan) {
-                const dietElement = displayDietPlan(dietPlan);
-                if (dietElement) {
-                    // Create a section title for the diet plan
-                    const dietSectionTitle = document.createElement('h3');
-                    dietSectionTitle.className = 'section-title';
-                    dietSectionTitle.textContent = 'Piano Alimentare';
-                    trainingPlanContainer.appendChild(dietSectionTitle);
-                    
-                    // Add the diet plan to the page
-                    trainingPlanContainer.appendChild(dietElement);
-                }
-            }
-        }
-        
         // Add a summary section
         const summarySection = document.createElement('div');
         summarySection.className = 'summary-section';
