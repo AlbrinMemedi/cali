@@ -518,14 +518,17 @@ footer .fa-heart {
         margin-right: 5px;
     }
     
-    /* Fissa l'allineamento della linea verde nel mobile */
+    /* Navigazione mobile - rafforza le regole delle linee colorate */
     .diet-page .main-nav li.active a {
-        border-bottom: 3px solid #27ae60;
+        border-bottom-width: 3px;
+        border-bottom-style: solid;
+        border-bottom-color: #27ae60;
     }
     
-    /* Fissa l'allineamento della linea blu nel mobile */
     body:not(.diet-page) .main-nav li.active a {
-        border-bottom: 3px solid #3498db;
+        border-bottom-width: 3px;
+        border-bottom-style: solid;
+        border-bottom-color: #3498db;
     }
     
     .macros-grid {
@@ -561,83 +564,28 @@ footer .fa-heart {
 @media (max-width: 480px) {
     .container {
         width: 100%;
-        padding: 0 15px;
+        padding: 0 10px;
     }
-    
+
     header {
-        padding: 1.5rem 0;
+        padding: 20px 0;
     }
     
     header h1 {
         font-size: 1.6rem;
+        margin-bottom: 10px;
     }
     
     header p {
         font-size: 0.9rem;
     }
     
-    .form-section, #plan-section {
-        padding: 1.5rem;
-    }
-    
-    .form-group label {
-        font-size: 0.9rem;
-    }
-    
-    .btn-primary, .btn-secondary {
-        padding: 0.8rem;
-        font-size: 1rem;
-    }
-    
-    .exercise-name {
-        font-size: 0.95rem;
-    }
-    
-    .exercise-sets, .pausa-between-sets, .pausa-between-exercises {
-        font-size: 0.85rem;
-    }
-    
-    .notes h4 {
-        font-size: 1rem;
-    }
-    
-    .notes ul {
-        padding-left: 1rem;
-    }
-    
-    .notes li {
-        font-size: 0.9rem;
-        margin-bottom: 0.8rem;
-    }
-    
-    .exercise-description {
-        font-size: 0.8rem;
-        margin: 4px 0 10px 4px;
-        padding-left: 6px;
-    }
-    
-    .diet-plan {
+    .form-section, .exercise-section {
         padding: 15px;
-        margin: 15px 0;
     }
     
-    .meal {
-        padding: 12px;
-    }
-    
-    .meal-options li {
-        font-size: 0.85rem;
-    }
-    
-    .foods-list li {
-        font-size: 0.75rem;
-        margin-right: 6px;
-        margin-bottom: 6px;
-    }
-    
-    /* Modifica questi stili per dispositivi molto piccoli */
     .main-nav a {
-        padding: 10px 8px;
+        padding: 10px 5px;
         font-size: 0.85rem;
     }
     
@@ -646,13 +594,27 @@ footer .fa-heart {
         margin-right: 3px;
     }
     
-    /* Fissa l'allineamento delle barre colorate su schermi molto piccoli */
-    .diet-page .main-nav li.active a {
-        border-bottom: 3px solid #27ae60;
+    .btn-primary, .btn-secondary {
+        padding: 10px;
+        font-size: 0.9rem;
     }
     
+    .day-container h3 {
+        font-size: 1.1rem;
+    }
+    
+    .exercise-name {
+        font-size: 1rem;
+    }
+    
+    .exercise-details, .exercise-notes {
+        font-size: 0.85rem;
+    }
+    
+    /* Assicura che le linee colorate siano ben visibili anche su smartphone */
+    .diet-page .main-nav li.active a,
     body:not(.diet-page) .main-nav li.active a {
-        border-bottom: 3px solid #3498db;
+        border-bottom-width: 3px;
     }
 }
 
@@ -871,12 +833,13 @@ input:hover, select:hover {
     background-color: #219955;
 }
 
+/* Indicatore menu attivo pagina dieta */
 .diet-page .main-nav li.active a {
     border-bottom: 3px solid #27ae60;
     background-color: rgba(255, 255, 255, 0.1);
 }
 
-/* Stili per la pagina di allenamento */
+/* Indicatore menu attivo pagina allenamento */
 body:not(.diet-page) .main-nav li.active a {
     border-bottom: 3px solid #3498db;
     background-color: rgba(255, 255, 255, 0.1);
