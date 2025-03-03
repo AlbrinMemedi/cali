@@ -503,6 +503,59 @@ footer .fa-heart {
     .exercise {
         padding: 0.8rem;
     }
+    
+    .diet-form-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .main-nav a {
+        padding: 12px 10px;
+        font-size: 0.9rem;
+    }
+    
+    .main-nav i {
+        font-size: 1.1rem;
+        margin-right: 5px;
+    }
+    
+    /* Fissa l'allineamento della linea verde nel mobile */
+    .diet-page .main-nav li.active a {
+        border-bottom: 3px solid #27ae60;
+    }
+    
+    /* Fissa l'allineamento della linea blu nel mobile */
+    body:not(.diet-page) .main-nav li.active a {
+        border-bottom: 3px solid #3498db;
+    }
+    
+    .macros-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .summary-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .meals-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .calories-value {
+        font-size: 2rem;
+    }
+    
+    .macro-value {
+        font-size: 1.5rem;
+    }
+    
+    .section-title {
+        font-size: 1.3rem;
+    }
+    
+    #diet-plan-container {
+        padding: 1.5rem;
+    }
 }
 
 @media (max-width: 480px) {
@@ -580,6 +633,26 @@ footer .fa-heart {
         font-size: 0.75rem;
         margin-right: 6px;
         margin-bottom: 6px;
+    }
+    
+    /* Modifica questi stili per dispositivi molto piccoli */
+    .main-nav a {
+        padding: 10px 8px;
+        font-size: 0.85rem;
+    }
+    
+    .main-nav i {
+        font-size: 1rem;
+        margin-right: 3px;
+    }
+    
+    /* Fissa l'allineamento delle barre colorate su schermi molto piccoli */
+    .diet-page .main-nav li.active a {
+        border-bottom: 3px solid #27ae60;
+    }
+    
+    body:not(.diet-page) .main-nav li.active a {
+        border-bottom: 3px solid #3498db;
     }
 }
 
@@ -870,350 +943,34 @@ body:not(.diet-page) .main-nav li.active a {
         font-size: 1.1rem;
         margin-right: 5px;
     }
-}
-
-/* Stili per la pagina di dieta */
-.diet-form-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
-    margin-bottom: 2rem;
-}
-
-.form-section-title {
-    grid-column: 1 / -1;
-    margin-top: 1.5rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 1px solid #ddd;
-}
-
-.form-section-title:first-child {
-    margin-top: 0;
-}
-
-.form-section-title h3 {
-    font-size: 1.2rem;
-    color: var(--primary-color);
-    margin-bottom: 0;
-}
-
-.form-section-title i {
-    margin-right: 8px;
-}
-
-.full-width {
-    grid-column: 1 / -1;
-}
-
-/* Stili per il piano alimentare */
-#diet-plan-container {
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: var(--box-shadow);
-    padding: 2rem;
-    margin-bottom: 2rem;
-}
-
-/* Stili per le sezioni del piano alimentare */
-.diet-summary-section, .macros-section, .meal-plan-section, .tips-section {
-    margin-bottom: 2.5rem;
-    padding-bottom: 1.5rem;
-    border-bottom: 1px solid #eee;
-}
-
-.diet-summary-section:last-child, .macros-section:last-child, .meal-plan-section:last-child, .tips-section:last-child {
-    border-bottom: none;
-    padding-bottom: 0;
-}
-
-.section-title {
-    display: flex;
-    align-items: center;
-    font-size: 1.5rem;
-    margin-bottom: 1.2rem;
-    color: var(--dark-color);
-}
-
-.section-title i {
-    margin-right: 10px;
-    color: var(--primary-color);
-}
-
-.summary-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 15px;
-}
-
-.summary-item {
-    background-color: #f8f9fa;
-    padding: 10px 15px;
-    border-radius: 6px;
-}
-
-.summary-item .label {
-    color: #666;
-    font-size: 0.9rem;
-}
-
-.summary-item .value {
-    font-weight: 600;
-    color: var(--dark-color);
-}
-
-/* Stili per la sezione dei macronutrienti */
-.calories-info {
-    text-align: center;
-    margin-bottom: 1.5rem;
-    padding-bottom: 1rem;
-    border-bottom: 1px dashed #ddd;
-}
-
-.calories-info h4 {
-    font-size: 1.2rem;
-    margin-bottom: 10px;
-    color: var(--dark-color);
-}
-
-.calories-value {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: var(--primary-color);
-    margin-bottom: 10px;
-}
-
-.calories-details {
-    font-size: 0.9rem;
-    color: #666;
-}
-
-.macros-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-}
-
-.macro-item {
-    padding: 15px;
-    border-radius: 8px;
-    text-align: center;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-}
-
-.macro-item.protein {
-    background-color: #e3f2fd;
-    border-left: 4px solid #2196f3;
-}
-
-.macro-item.carbs {
-    background-color: #f1f8e9;
-    border-left: 4px solid #8bc34a;
-}
-
-.macro-item.fat {
-    background-color: #fff8e1;
-    border-left: 4px solid #ffc107;
-}
-
-.macro-title {
-    font-size: 1.1rem;
-    font-weight: 600;
-    margin-bottom: 8px;
-}
-
-.macro-value {
-    font-size: 1.8rem;
-    font-weight: 700;
-    margin-bottom: 5px;
-}
-
-.macro-calories {
-    font-size: 0.9rem;
-    margin-bottom: 5px;
-    color: #666;
-}
-
-.macro-percentage {
-    font-size: 0.9rem;
-    font-weight: 600;
-    color: var(--primary-color);
-}
-
-/* Stili per la sezione del piano pasti */
-.meal-plan-description {
-    margin-bottom: 1.5rem;
-    color: #666;
-    font-size: 0.95rem;
-}
-
-.meals-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 20px;
-}
-
-.meal-item {
-    background-color: white;
-    border-radius: 8px;
-    padding: 15px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    border-left: 4px solid var(--primary-color);
-}
-
-.meal-header {
-    border-bottom: 1px solid #eee;
-    padding-bottom: 10px;
-    margin-bottom: 10px;
-}
-
-.meal-header h4 {
-    margin: 0;
-    color: var(--dark-color);
-}
-
-.meal-macros {
-    line-height: 1.8;
-}
-
-.meal-calories {
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: var(--primary-color);
-    margin-bottom: 8px;
-}
-
-.meal-macro {
-    font-size: 0.9rem;
-    color: #666;
-}
-
-/* Stili per la sezione consigli */
-.tips-list {
-    margin: 0 0 1.5rem 1.5rem;
-}
-
-.tips-list li {
-    margin-bottom: 10px;
-    line-height: 1.5;
-    color: #444;
-}
-
-.important-note {
-    background-color: #f8f9fa;
-    border-left: 4px solid #f0ad4e;
-    padding: 15px;
-    border-radius: 6px;
-    margin-top: 1.5rem;
-}
-
-.important-note p {
-    margin: 0;
-    font-size: 0.9rem;
-    color: #555;
-}
-
-/* Stili per il messaggio di caricamento PDF */
-#pdf-loading-message {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: rgba(52, 152, 219, 0.9);
-    color: white;
-    padding: 15px 30px;
-    border-radius: 50px;
-    font-size: 1.1rem;
-    z-index: 1000;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-width: 300px;
-    text-align: center;
-}
-
-#pdf-loading-message i {
-    margin-right: 10px;
-    font-size: 1.2rem;
-}
-
-/* Media queries per la responsività */
-@media (max-width: 768px) {
-    .diet-form-grid {
-        grid-template-columns: 1fr;
+    
+    /* Mantengo l'allineamento specifico per mobile delle linee colorate */
+    .diet-page .main-nav li.active a {
+        border-bottom-width: 3px;
+        border-bottom-style: solid;
     }
     
-    .macros-grid {
-        grid-template-columns: 1fr;
-        gap: 15px;
-    }
-    
-    .summary-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .meals-container {
-        grid-template-columns: 1fr;
-    }
-    
-    .calories-value {
-        font-size: 2rem;
-    }
-    
-    .macro-value {
-        font-size: 1.5rem;
-    }
-    
-    .section-title {
-        font-size: 1.3rem;
-    }
-    
-    #diet-plan-container {
-        padding: 1.5rem;
+    body:not(.diet-page) .main-nav li.active a {
+        border-bottom-width: 3px;
+        border-bottom-style: solid;
     }
 }
 
 @media (max-width: 480px) {
-    .meal-item {
-        padding: 12px;
-    }
-    
-    .meal-header h4 {
-        font-size: 1.1rem;
-    }
-    
-    .meal-calories {
-        font-size: 1rem;
-    }
-    
-    .meal-macro {
+    .main-nav a {
+        padding: 10px 5px;
         font-size: 0.85rem;
     }
     
-    .calories-value {
-        font-size: 1.8rem;
-    }
-    
-    .calories-details {
-        font-size: 0.8rem;
-    }
-    
-    .summary-item {
-        padding: 8px 12px;
-    }
-    
-    .section-title {
-        font-size: 1.2rem;
-    }
-    
-    .important-note p {
-        font-size: 0.85rem;
-    }
-    
-    #pdf-loading-message {
-        min-width: 250px;
+    .main-nav i {
         font-size: 1rem;
-        padding: 12px 25px;
+        margin-right: 3px;
+    }
+    
+    /* Rendi le barre colorate ancora più visibili sui dispositivi più piccoli */
+    .diet-page .main-nav li.active a,
+    body:not(.diet-page) .main-nav li.active a {
+        border-bottom-width: 3px;
     }
 }
 
